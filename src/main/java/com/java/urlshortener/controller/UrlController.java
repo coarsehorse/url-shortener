@@ -5,7 +5,6 @@ import com.java.urlshortener.payload.response.ShortenUrlResponse;
 import com.java.urlshortener.payload.util.Utils;
 import io.vavr.control.Option;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,9 +24,6 @@ public class UrlController {
     
     @Value("${app.slug.attemptsToGen}")
     private Integer SLUG_ATTEMPTS_TO_GEN;
-    
-    @LocalServerPort
-    private int port;
     
     // To make it simple, lets store slugs in memory for the first time
     private final static Map<String, String> slugMap = new ConcurrentHashMap<>();
