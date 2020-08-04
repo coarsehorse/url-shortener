@@ -1,4 +1,4 @@
-package com.java.urlshortener.payload.util;
+package com.java.urlshortener.util;
 
 import io.vavr.control.Option;
 
