@@ -8,7 +8,9 @@ import com.java.urlshortener.util.Utils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -64,7 +66,7 @@ public class UrlController {
         // Find redirection url
         String redirectionUrl = shUrlRepository.findBySlug(slug)
             .map(ShortenedUrl::getSourceUrl)
-            .getOrElseThrow(() -> new RuntimeException("Bad slug"));
+            .getOrElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Bad slug"));
     
         // Redirect
         response.setHeader("Location", redirectionUrl);

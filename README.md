@@ -7,20 +7,13 @@ It is simple application that able to shorten specified link.\
 Example: `https://very-long.domen.com/article-title` -> `https://sh.com/Hd51d`\
 MongoDB is used as data base to make it fast.
 
-### How to build and run App + MongoDB using Docker(preferred way)
+### How to build and run App + MongoDB using Docker
 * `cd ./url-shortener`
 * `docker-compose up --build`
 
 Now you can access url-shortener at `localhost:8080` and mongodb at `localhost:27017`.\
 MongoDB data is persisted between containers restarts.\
 Db name and credentials may be found in `application.properties`.
-
-### How to build and run only App using Docker
-* `cd ./url-shortener`
-* `docker build --tag=url-shortener .`
-* `docker run --name=url-shortener -p 8080:8080 url-shortener:latest`
-
-Note: port `8080` must match with port value in `application.properties`
 
 ### How to use
 Once application is started you can post long url to receive shortened version:
