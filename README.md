@@ -1,11 +1,11 @@
 # Url Shortener
-
 Main target of this project was to learn `Docker` and `Docker Compose`.\
 But to dockerize some app, you first need to create this app, huh.\
 And I think an url shortener is one of the best apps for this purpose.\
 It is simple application that able to shorten specified link.\
 Example: `https://very-long.domen.com/article-title` -> `https://sh.com/Hd51d`\
-MongoDB is used as data base to make it fast.
+MongoDB is used as a data base to make app fast.\
+iOS client: https://github.com/theimaginationless/url-shortener-ios-client
 
 ### How to build and run App + MongoDB using Docker
 * `cd ./url-shortener`
